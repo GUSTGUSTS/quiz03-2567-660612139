@@ -19,7 +19,7 @@ export interface User {
   role: "ADMIN" | "SUPER_ADMIN";
 }
 
-const originalDB = {
+export const originalDB = {
   rooms: [
     {
       roomId: "okhkUzffzCGMqtfC1uv6x",
@@ -30,6 +30,8 @@ const originalDB = {
       roomName: "261207 Tutorial",
     },
   ],
+  rnum: 2
+  ,
   messages: [
     {
       roomId: "okhkUzffzCGMqtfC1uv6x",

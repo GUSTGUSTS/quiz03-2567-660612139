@@ -1,4 +1,4 @@
-import { DB, readDB, writeDB } from "@lib/DB";
+import { DB, readDB, writeDB, originalDB } from "@lib/DB";
 import { checkToken } from "@lib/checkToken";
 import { nanoid } from "nanoid";
 import { NextRequest, NextResponse } from "next/server";
@@ -6,25 +6,25 @@ import { NextRequest, NextResponse } from "next/server";
 export const GET = async (request: NextRequest) => {
   readDB();
 
-  // return NextResponse.json(
-  //   {
-  //     ok: false,
-  //     message: `Room is not found`,
-  //   },
-  //   { status: 404 }
-  // );
+  return NextResponse.json(
+     {
+       ok: true,
+       message: originalDB.messages
+     },
+     
+   );
 };
 
 export const POST = async (request: NextRequest) => {
   readDB();
 
-  // return NextResponse.json(
-  //   {
-  //     ok: false,
-  //     message: `Room is not found`,
-  //   },
-  //   { status: 404 }
-  // );
+   return NextResponse.json(
+     {
+       ok: false,
+     message: `Room is not found`,
+     },
+     { status: 404 }
+   );
 
   const messageId = nanoid();
 
