@@ -1,7 +1,7 @@
 import {  readDB, writeDB, originalDB } from "@lib/DB";
 
-import { checkToken } from "@lib/checkToken";
-import { nanoid } from "nanoid";
+//import { checkToken } from "@lib/checkToken";
+//import { nanoid } from "nanoid";
 import { NextRequest, NextResponse } from "next/server";
 
 
@@ -17,7 +17,7 @@ export const GET = async () => {
 };
 
 export const POST = async (request: NextRequest) => {
-  
+  request;
 
   // return NextResponse.json(
   //   {

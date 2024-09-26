@@ -1,11 +1,11 @@
 import { readDB, writeDB, originalDB } from "@lib/DB";
 import { checkToken } from "@lib/checkToken";
-import { nanoid } from "nanoid";
+//import { nanoid } from "nanoid";
 import { NextRequest, NextResponse } from "next/server";
 
 export const GET = async (request: NextRequest) => {
   readDB();
-
+  request;
   return NextResponse.json(
      {
        ok: true,
@@ -17,7 +17,7 @@ export const GET = async (request: NextRequest) => {
 
 export const POST = async (request: NextRequest) => {
   readDB();
-
+  request;
    return NextResponse.json(
      {
        ok: false,
@@ -31,7 +31,7 @@ export const POST = async (request: NextRequest) => {
 
 export const DELETE = async (request: NextRequest) => {
   const payload = checkToken();
-
+request;
   // return NextResponse.json(
   //   {
   //     ok: false,
