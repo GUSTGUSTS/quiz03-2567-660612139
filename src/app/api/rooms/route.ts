@@ -1,23 +1,23 @@
-import { DB, readDB, writeDB, originalDB } from "@lib/DB";
+import {  readDB, writeDB, originalDB } from "@lib/DB";
 
 import { checkToken } from "@lib/checkToken";
 import { nanoid } from "nanoid";
 import { NextRequest, NextResponse } from "next/server";
-import { Room } from "@lib/DB";
+
 
 
 export const GET = async () => {
    readDB();
-  let rr = originalDB.rooms
+  originalDB.rooms
   return NextResponse.json({
     ok: true,
-    rooms: rr,
+    rooms: originalDB.rooms,
     totalRooms: originalDB.rnum
   });
 };
 
 export const POST = async (request: NextRequest) => {
-  const payload = checkToken();
+  
 
   // return NextResponse.json(
   //   {
@@ -37,7 +37,7 @@ export const POST = async (request: NextRequest) => {
   //   { status: 400 }
   // );
 
-  const roomId = nanoid();
+  
 
   //call writeDB after modifying Database
   writeDB();
